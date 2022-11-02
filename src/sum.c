@@ -12,25 +12,36 @@ int sum (int n)
   if (n > 1)
     return n + sum (n - 1);
   else
-    return 1;
+    return n;
 }
 
 /* Sum integers 1 to n */
-//Tror det er rigtigt. Tjek efter.
 int sumtail (int n, int total)
 {
     /* pre-condition */
   assert (n >= 1);
 /* post-condition */
   if (n > 1)
-    return sum (n - 1) + n;
+    return sumtail(n-1,total+n);
   else
-    return 1;
+    return total+1;
 }
 
 /* Sum integers 1 to n */
 int sumwhile (int n)
 {
-  return 0;
+  
+  //Precondition
+  assert(n>0);
+  
+  int total = 0; //MIG DER HAR LAVET DENNE. 
+  
+  //Løkke kører såfremt n har en værdi. n lægges til totalværdien for hver iteration af løkken.
+  while (n>=1) {
+    total+=n;
+    n--;
+  }
+
+  return total;
 }
 
