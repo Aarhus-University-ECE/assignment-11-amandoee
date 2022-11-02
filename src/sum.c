@@ -16,9 +16,16 @@ int sum (int n)
 }
 
 /* Sum integers 1 to n */
+//Tror det er rigtigt. Tjek efter.
 int sumtail (int n, int total)
 {
-    return 0;
+    /* pre-condition */
+  assert (n >= 1);
+/* post-condition */
+  if (n > 1)
+    return sum (n - 1) + n;
+  else
+    return 1;
 }
 
 /* Sum integers 1 to n */
